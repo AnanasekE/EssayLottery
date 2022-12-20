@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.7"
 
 
+[tool.poetry.group.dev.dependencies]
+factory-boy = "^3.2.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
