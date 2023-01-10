@@ -1,8 +1,8 @@
-from flask import Flask, Response
+from flask import Flask, Response, request
 
 app = Flask(__name__)
 
 
 @app.post("/users")
 def add_user() -> Response:
-    return Response(status=501)
+    return request.json
