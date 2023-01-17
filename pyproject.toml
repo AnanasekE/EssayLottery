@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "io_lottery"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10.6"
 flask = "^2.2.2"
 
 

@@ -1,7 +1,7 @@
 from factory import DictFactory
 from factory.fuzzy import FuzzyText, FuzzyInteger, FuzzyFloat
 
-from io_lottery.app import add_user, app
+from io_lottery.app import add_user, app, get_user
 
 
 class UserPayloadFactory(DictFactory):
@@ -18,3 +18,9 @@ def test_returns_sent_user() -> None:
     with app.test_request_context(path="/users", method='POST', json=payload):
         actual = add_user()
     assert actual == payload
+
+
+def test_returns_sent_user_get() -> None:
+    with app.test_request_context(path='/users', method='GET') as c:
+        actual = get_user()
+        assert actual.status_code == 501
