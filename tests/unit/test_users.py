@@ -24,3 +24,10 @@ def test_returns_sent_user_get() -> None:
     with app.test_request_context(path='/users', method='GET') as c:
         actual = get_user()
         assert actual.status_code == 501
+
+
+# def test_patch_user() -> None:
+#     payload = UserPayloadFactory()
+#     with app.test_request_context(path='/users', method='PATCH', json=payload):
+#         actual = patch_user()
+#         assert actual.status_code == 501
